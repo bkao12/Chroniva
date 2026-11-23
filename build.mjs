@@ -1,0 +1,21 @@
+import {build} from 'esbuild';
+import {cp,mkdir,readFile,readdir,writeFile,rm} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import {execFileSync} from 'node:child_process';
+process.chdir(fileURLToPath(new URL('.',import.meta.url)));
+const python=process.env.ATLAS_PYTHON||'python3';
+execFileSync(python,['scripts/extract.py'],{stdio:'inherit'});
+await mkdir('docs',{recursive:true});
+const timeline=JSON.parse(await readFile('.generated/public/atlas.json','utf8'));
+const css=await readFile('.generated/public/legacy.css','utf8');
+await writeFile('docs/atlas-content.json',JSON.stringify({schema:1,revision:timeline.sourceHash,css,timeline}));
+await rm('docs/atlas.json',{force:true});await rm('docs/legacy.css',{force:true});
+await build({entryPoints:['src/main.jsx'],bundle:true,minify:true,format:'esm',target:['es2022'],outfile:'docs/app.js',legalComments:'linked'});
+await cp('src/styles.css','docs/styles.css');
+await cp('src/dark.css','docs/dark.css');
+const licenses=(await readdir('node_modules',{recursive:true})).filter(path=>/(^|\/)(LICENSE|LICENCE|NOTICE)(\.[^/]*)?$/i.test(path));
+const notices=await Promise.all(licenses.sort().map(async path=>`${path}\n\n${await readFile(`node_modules/${path}`,'utf8')}`));
+await writeFile('docs/THIRD_PARTY_LICENSES.txt',notices.join('\n\n----------------------------------------\n\n'));
+await writeFile('docs/index.html',`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#10151c"><meta name="description" content="An expandable chronological learning Atlas with universal search and linked biological processes."><title>Evolutionary Learning Atlas — Interactive Timeline</title><link rel="stylesheet" href="./styles.css"><link rel="stylesheet" href="./dark.css"></head><body><div id="root"><p style="padding:32px">Loading the learning Atlas…</p></div><script type="module" src="./app.js"></script></body></html>`);
+
+await writeFile('docs/.nojekyll','');

@@ -1,0 +1,1 @@
+{"name":"evolutionary-atlas-timeline","version":"1.0.0","private":true,"type":"module","scripts":{"build":"node build.mjs"},"dependencies":{"@radix-ui/react-accordion":"1.2.12","fuse.js":"7.1.0","react":"19.1.1","react-dom":"19.1.1"},"devDependencies":{"esbuild":"0.25.10"}}
