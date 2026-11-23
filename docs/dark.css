@@ -1,0 +1,70 @@
+/* Interface-only theme: shared Atlas content and the original reading site stay unchanged. */
+:root{
+ color-scheme:dark;
+ --ink:#e2eaf2;--muted:#b4c2d0;--line:#34495d;--blue:#254f7b;
+ --page:#10151c;--panel:#18212b;--raised:#202c39;--inset:#121b25;
+ --link:#9bc8ff;--role-blue:#8cbdff;--role-red:#ff969d;
+ --role-purple:#d6a6ff;--role-orange:#ffbd80;--role-grey:#a7b0bb;
+ background:var(--page);
+}
+body{background:var(--page);color:var(--ink)}
+::selection{background:#37577a;color:#fff}
+button,input,select,dialog{background:var(--inset);border-color:var(--line);color:var(--ink)}
+input::placeholder{color:#a9b8c8;opacity:1}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline-color:#9bc8ff}
+a{color:var(--link)}
+.app-header{background:#141d27;border-color:var(--line);box-shadow:0 3px 16px #0004}
+.original-link{color:var(--link);border-color:#526d88}
+.app-header input,.app-header select,.app-header button,.search-dialog input,.search-dialog button{
+ background:var(--inset);color:var(--ink);border-color:var(--line);
+}
+.app-header button:hover:not(:disabled),.range-controls button:hover:not(:disabled),.search-dialog button:hover:not(:disabled){background:#2b4055;border-color:#6d8cac}
+.app-header .primary,.search-dialog .primary{background:var(--blue);border-color:#5685b5;color:#fff}
+.app-header .primary:hover,.search-dialog .primary:hover{background:#316492}
+.focus-row label,.focus-status,.reading-intro,.live-notice,.period-age,.chapter-caption,.app-footer,.results-caption,.result-path{color:var(--muted)}
+.app-footer a{color:var(--link)}
+.timeline{border-color:var(--line)}
+.root-node{background:var(--panel);border-color:var(--line);box-shadow:0 2px 12px #0002}
+.root-node:before{border-color:var(--page);background:#7eafe0;box-shadow:0 0 0 1px #7194b6}
+.root-node.node-chapter:before{background:#29394a;box-shadow:0 0 0 1px #8ba2b9}
+.node-trigger,.node-trigger:hover{background:transparent;color:var(--ink)}
+.node-trigger:hover .node-title{color:#b8d9ff}
+.range-controls button{background:var(--inset);border-color:var(--line);color:#c4d7eb}
+.node-set,.node-bp{background:var(--panel);border-color:var(--line)}
+.node-set>.node-row{background:var(--raised)}
+.node-aspect{border-color:var(--line)}
+.node-aspect .node-title{color:#c1d2e4}
+.node-bp>.node-content{border-color:var(--line)}
+.empty-set{background:var(--inset);color:var(--muted)}
+.active-destination,.rich :target{outline-color:#8bb7e5}
+.rich mark,.bp-title-html mark{background:#695014;color:#fff5c9}
+.rich .period-context,.rich .legend,.rich .bp-alias{background:var(--raised);color:#c7d5e4;border-color:#6684a2}
+.rich .organism,.rich .pathogen-link{background:var(--inset);border-color:var(--line)}
+.rich .pathogen-mechanism,.rich .bp,.rich .bp-relations,.rich .reference{border-color:var(--line)}
+.rich .reference summary,.rich h3,.rich h4{color:var(--ink)}
+.rich .organism h3{color:inherit}
+.rich .anatomy,.rich .section-note,.rich .placement-marker{color:var(--muted)}
+.rich .personal-lens-controls button{color:var(--ink)}
+.rich .functional-set>h3{color:var(--ink);border-color:var(--line)}
+.rich .functional-aspect>h4{color:#c1d2e4}
+
+/* Retain the semantic role colors, lifting their contrast on dark surfaces.
+   Exact inline-color matches preserve all content markup, links and underlines. */
+.blue{color:var(--role-blue)}.red{color:var(--role-red)}
+.purple{color:var(--role-purple)}.orange{color:var(--role-orange)}
+:is(.rich,.bp-title-html) [style*="color:#193cff"]{color:var(--role-blue)!important}
+:is(.rich,.bp-title-html) [style*="color:#2563eb"]{color:#9bb8ff!important}
+:is(.rich,.bp-title-html) [style*="color:#c51222"]{color:var(--role-red)!important}
+:is(.rich,.bp-title-html) [style*="color:#8b1bb1"]{color:var(--role-purple)!important}
+:is(.rich,.bp-title-html) [style*="color:#a65300"]{color:var(--role-orange)!important}
+:is(.rich,.bp-title-html) [style*="color:#888888"]{color:var(--role-grey)!important}
+:is(.rich,.bp-title-html) [style*="color:#20242a"]{color:var(--ink)!important}
+:is(.rich,.bp-title-html) [style*="color:#344861"],
+:is(.rich,.bp-title-html) [style*="color:#596574"]{color:var(--muted)!important}
+.blue a,.purple a,.orange a,.red a{color:inherit}
+
+.search-dialog{background:var(--panel);color:var(--ink);border-color:#58718b;box-shadow:0 18px 75px #0009}
+.search-dialog::backdrop{background:#050a12b3}
+.search-results{border-color:var(--line)}
+.search-dialog .search-result{background:var(--panel);border-bottom-color:var(--line)!important}
+.search-dialog .search-result:hover{background:#26384b}
