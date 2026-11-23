@@ -1,0 +1,31 @@
+*{box-sizing:border-box}html{scroll-behavior:auto;scroll-padding-top:90px}body{margin:0;background:#edf1f5;color:#20242a;font:15px/1.62 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #d4dce5;padding:12px 22px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}header strong{font-size:17px}select,input,button{font:inherit;border:1px solid #cbd5e1;border-radius:6px;padding:7px 9px;background:#fff}input{width:260px;max-width:60vw}main{max-width:1120px;margin:22px auto;padding:0 18px}.period{background:#fff;padding:28px 34px;margin:0 0 24px;border-radius:10px;box-shadow:0 3px 16px #18334c08}.period>h2{font-size:25px;line-height:1.3;margin:0 0 20px;color:#243b53;border-bottom:2px solid #dce5ee;padding-bottom:14px}h3{font-size:16px;color:#344861;margin:22px 0 12px}.bp{border-left:2px solid #e3e9f0;padding:3px 0 3px 15px;margin:14px 0 20px}.bp-line{font-size:14px;margin:0}.anatomy{color:#3f4d5d}.weight{font-size:12px}.bracket-ref{color:inherit;text-decoration:none;border-bottom:1px dotted currentColor}.bracket-ref:hover{text-decoration:underline}.red{color:#c51222}.purple{color:#8b1bb1}.orange{color:#a65300}.blue{color:#193cff}.blue a{color:inherit;text-decoration:none;border-bottom:1px dotted currentColor}.retained-note,.treatment,.pathogen-link{font-size:13px;margin:8px 0 8px 14px}.pathogen-link{background:#f3f7ff;border-radius:6px;padding:9px 12px;margin-top:14px}.to-general{font-size:12px}.organism{padding:16px 20px;border:1px solid #dbe6fa;border-radius:9px;margin:18px 0;background:#fbfcff}.organism h3{color:inherit;margin:0 0 12px;font-size:16px}.harm-bracket{font-size:12px;font-weight:400;line-height:1.8}.organism p{font-size:13px;margin:8px 0}.pathogen-mechanism{border-left:2px solid #cbd9ff;padding:10px 14px;margin:12px 0;font-size:13px}.context{font-size:12px;margin-top:6px}.reference{border-top:1px solid #dae1ea;margin-top:22px;padding:18px 0}.reference summary{font-size:16px;font-weight:600;color:#344861;cursor:pointer}.section-note{color:#526173;font-size:13px}.legend{color:#526173;font-size:13px;background:#f3f6f9;padding:14px 18px;border-radius:7px}u{text-underline-offset:3px}article[id],section[id]{scroll-margin-top:100px}:target{outline:2px solid #a6c5f8;outline-offset:4px}dialog{border:1px solid #cbd5e1;border-radius:9px;max-width:780px;width:90%;padding:20px}#results{max-height:65vh;overflow:auto}#results a{display:block;padding:10px;border-bottom:1px solid #edf1f5;color:#344861;text-decoration:none}#results a:hover{background:#f2f6ff}.status{font-size:12px;color:#526173}@media(max-width:650px){header{padding:10px;gap:7px}header strong{width:100%}main{padding:0 7px}.period{padding:19px 15px}.organism{padding:13px}.bp{padding-left:10px}.status{display:none}.period>h2{font-size:21px}}@media print{header{display:none}body{background:white;font-size:11pt}main{max-width:none;padding:0}.period{box-shadow:none;border-radius:0;padding:0;break-before:page}.bp,.organism{break-inside:avoid}.reference{display:block}a{color:inherit}details:not([open])>*{display:block}}
+/* Uniform reading typography. Role colors, priority underlines and links remain independent. */
+html{font-size:16px}body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.65}
+button,input,select,dialog{font-family:inherit;font-size:1rem}
+.bp-line,.weight,.retained-note,.treatment,.pathogen-link,.to-general,.harm-bracket,.organism p,.pathogen-mechanism,.context,.section-note,.legend,.status,.reference summary{font-size:1rem}
+main p,main li{font-size:1rem}.period>h2{font-size:1.5rem}h3,.organism h3{font-size:1.125rem}header strong{font-size:1.125rem}
+.bp-line,.bp-line span,.bp-line a,.bp-parenthesis,.bp-subject{font-weight:400}
+.bp-line strong.bp-name,strong.bp-name{font-weight:700}
+.bp-line .anatomy,.bp-line .weight{font-weight:400}
+.bp-term u{text-decoration-thickness:1px;text-underline-offset:3px}
+.weight a,.context a,.harm-bracket a{font-weight:400;text-decoration:none}
+@media(max-width:650px){.period>h2{font-size:1.5rem}}
+@media print{html{font-size:11pt}body{font-size:1rem}}
+
+.bp-relations{margin:10px 0 4px;padding-left:12px;border-left:1px solid #e3e9f0}.bp-relations>p{margin:5px 0}.bp-relations>.section-note{margin-bottom:6px}
+
+.functional-set{margin:26px 0 32px}.functional-set>h3{font-size:1.2rem;color:#243b53;border-bottom:1px solid #dce5ee;padding-bottom:9px;margin:0 0 16px}
+.functional-aspect>h4{font-size:1rem;font-weight:600;color:#43566d;margin:20px 0 10px}
+.functional-guide{margin:0 0 24px}.functional-guide p{margin:7px 0}.personal-lens-controls button{margin:4px 3px 2px 0;color:#344861}
+.placement-marker{color:#526173;font-weight:400}.relation-segment{font-weight:400}.relation-label{font-weight:400}
+.selected-relations,.selected-relations span,.selected-relations a{font-size:1rem;font-weight:400}
+.selected-relations a{text-decoration:none;border-bottom:1px dotted currentColor}
+.bp-alias{margin-top:10px;padding:8px 12px;background:#f5f7fa;border-radius:5px}
+@media(max-width:650px){.functional-set article[id]{scroll-margin-top:180px}}
+@media print{.functional-aspect>h4,.functional-set>h3{break-after:avoid}.functional-set{break-before:auto}.personal-lens-controls button{border:0;padding:0;background:none}}
+
+.period-context{margin:-5px 0 24px;padding:12px 16px;border-left:3px solid #b6c6d7;background:#f6f8fa;color:#43566d}
+.period-context p{margin:5px 0;font-size:1rem}.period-context a{color:inherit}.period-context .context-sources{font-size:1rem}
+.organism>.microbe-summary{margin:0}.organism-heading{font-size:1.125rem;font-weight:700}.organism-heading .harm-bracket{font-weight:400}
+.microbe-summary .compact-treatment{font-size:1rem;font-weight:400}.microbe-summary .compact-treatment>strong:empty{display:none}
+.microbe-summary,.compact-microbial-note{line-height:1.65}.pathogen-mechanism>.context{display:inline}

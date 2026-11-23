@@ -1,0 +1,18 @@
+/* Reading layouts share the original content styles and the timeline's dark palette. */
+.reading-header{position:static;display:block;max-width:1120px;margin:auto;padding:24px 18px;background:transparent;border:0;box-shadow:none}
+.reading-header h1{font-size:1.5rem;line-height:1.3;margin:0 0 12px;color:var(--ink)}
+.reading-header nav{display:flex;flex-wrap:wrap;gap:10px 20px}
+.reading-header p{font-size:.875rem;color:var(--muted);margin:10px 0 0}
+.chapter-index{max-width:1120px;margin:0 auto 24px;padding:0 18px}
+.chapter-index h2{font-size:1.125rem;margin:0 0 8px;color:var(--ink)}
+.chapter-index ol{columns:2;column-gap:32px;margin:0;padding-left:24px}
+.chapter-index li{break-inside:avoid;margin:5px 0;padding-left:3px}
+.atlas-reading{margin-top:0;overflow-wrap:anywhere}
+.atlas-reading .period{background:var(--panel);border:1px solid var(--line);box-shadow:0 2px 12px #0002}
+.atlas-reading .period>h2{color:var(--ink);border-color:var(--line)}
+.atlas-reading .personal-lens-controls span{display:inline-block;padding:4px 8px;margin:3px;border:1px solid var(--line);border-radius:5px;color:var(--ink)}
+.atlas-reading [id]{scroll-margin-top:16px}
+.atlas-reading .reference>h3{font-size:1.125rem;margin-top:0}
+.atlas-reading :target{outline-color:#8bb7e5}
+@media(max-width:650px){.chapter-index ol{columns:1}.reading-header{padding:20px 14px}.chapter-index{padding:0 14px}.atlas-reading .period{padding:19px 15px}}
+@media print{.reading-header,.chapter-index{display:none}.atlas-reading .period{border:0;box-shadow:none}}
